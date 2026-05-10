@@ -1,0 +1,492 @@
+/* ============================================================
+   UNIFIED SPACING SYSTEM
+   
+   Consistent spacing across ALL sections for premium feel
+   ============================================================ */
+
+/* ── SECTION SPACING TOKENS ── */
+:root {
+  /* Section vertical padding */
+  --section-py-mobile: 80px;
+  --section-py-tablet: 100px;
+  --section-py-desktop: 120px;
+
+  /* Container max-width and padding */
+  --container-max: 1280px;
+  --container-px-mobile: 24px;
+  --container-px-tablet: 48px;
+  --container-px-desktop: 80px;
+
+  /* Heading spacing */
+  --heading-mb-mobile: 48px;
+  --heading-mb-tablet: 64px;
+  --heading-mb-desktop: 80px;
+
+  /* Card/Grid gaps */
+  --gap-sm: 16px;
+  --gap-md: 24px;
+  --gap-lg: 32px;
+}
+
+/* ============================================================
+   UNIVERSAL SECTION WRAPPER
+   ============================================================ */
+
+/* Apply to ALL sections except Hero */
+.section-wrapper {
+  width: 100dvw;
+  padding: var(--section-py-mobile) 0;
+}
+
+@media (min-width: 768px) {
+  .section-wrapper {
+    padding: var(--section-py-tablet) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-wrapper {
+    padding: var(--section-py-desktop) 0;
+  }
+}
+
+/* ============================================================
+   UNIVERSAL CONTAINER
+   ============================================================ */
+
+.container-wrapper {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px-mobile);
+}
+
+@media (min-width: 768px) {
+  .container-wrapper {
+    padding: 0 var(--container-px-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-wrapper {
+    padding: 0 var(--container-px-desktop);
+  }
+}
+
+/* ============================================================
+   SECTION HEADER SPACING
+   ============================================================ */
+
+.section-header {
+  margin-bottom: var(--heading-mb-mobile);
+}
+
+@media (min-width: 768px) {
+  .section-header {
+    margin-bottom: var(--heading-mb-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-header {
+    margin-bottom: var(--heading-mb-desktop);
+  }
+}
+
+/* ============================================================
+   APPLY UNIFIED SPACING TO ALL SECTIONS
+   ============================================================ */
+
+/* About Section */
+.about-section {
+  width: 100dvw;
+  padding: var(--section-py-mobile) 0;
+}
+
+@media (min-width: 768px) {
+  .about-section {
+    padding: var(--section-py-tablet) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-section {
+    padding: var(--section-py-desktop) 0;
+  }
+}
+
+.about-inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px-mobile);
+}
+
+@media (min-width: 768px) {
+  .about-inner {
+    padding: 0 var(--container-px-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-inner {
+    padding: 0 var(--container-px-desktop);
+  }
+}
+
+/* Projects Section */
+.pv2-section {
+  width: 100dvw;
+  padding: var(--section-py-mobile) 0;
+}
+
+@media (min-width: 768px) {
+  .pv2-section {
+    padding: var(--section-py-tablet) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pv2-section {
+    padding: var(--section-py-desktop) 0;
+  }
+}
+
+.pv2-inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px-mobile);
+}
+
+@media (min-width: 768px) {
+  .pv2-inner {
+    padding: 0 var(--container-px-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pv2-inner {
+    padding: 0 var(--container-px-desktop);
+  }
+}
+
+/* Experience Section */
+.exp-section {
+  width: 100dvw;
+  padding: var(--section-py-mobile) 0;
+}
+
+@media (min-width: 768px) {
+  .exp-section {
+    padding: var(--section-py-tablet) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .exp-section {
+    padding: var(--section-py-desktop) 0;
+  }
+}
+
+.exp-inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px-mobile);
+}
+
+@media (min-width: 768px) {
+  .exp-inner {
+    padding: 0 var(--container-px-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .exp-inner {
+    padding: 0 var(--container-px-desktop);
+  }
+}
+
+/* Tech Stack Section - Apply same spacing */
+#skills {
+  width: 100dvw;
+  padding: var(--section-py-mobile) 0;
+}
+
+@media (min-width: 768px) {
+  #skills {
+    padding: var(--section-py-tablet) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  #skills {
+    padding: var(--section-py-desktop) 0;
+  }
+}
+
+/* Certifications Section - Already has custom spacing, keep it */
+#certifications {
+  /* Keep existing py-32 md:py-40 lg:py-48 from Certifications.jsx */
+}
+
+/* Contact Section - Already has custom spacing, keep it */
+#contact {
+  /* Keep existing py-32 md:py-40 lg:py-48 from ContactForm.jsx */
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 64px 0 40px;
+}
+
+.site-footer-inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px-mobile);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .site-footer-inner {
+    padding: 0 var(--container-px-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer-inner {
+    padding: 0 var(--container-px-desktop);
+  }
+}
+
+/* ============================================================
+   GRID SPACING CONSISTENCY
+   ============================================================ */
+
+/* About Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-lg);
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+}
+
+/* Achievement Grid */
+.ach-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-md);
+}
+
+@media (min-width: 768px) {
+  .ach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Projects Hero Grid */
+.pv2-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-md);
+  margin-bottom: var(--gap-md);
+}
+
+@media (min-width: 1024px) {
+  .pv2-hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Projects Grid */
+.pv2-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-md);
+}
+
+@media (min-width: 640px) {
+  .pv2-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pv2-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   HEADING SPACING HIERARCHY
+   ============================================================ */
+
+/* Section Label (small badge) */
+.about-label,
+.exp-block-label {
+  margin-bottom: 24px;
+}
+
+/* Section Title */
+.about-heading,
+.title-header-text {
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .about-heading,
+  .title-header-text {
+    margin-bottom: 40px;
+  }
+}
+
+/* Section Description */
+.about-bio {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .about-bio {
+    margin-bottom: 48px;
+  }
+}
+
+/* ============================================================
+   CARD SPACING
+   ============================================================ */
+
+/* About Capability Cards */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+/* Achievement Cards - Already set above */
+
+/* Certification Cards */
+.cert-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-sm);
+}
+
+@media (min-width: 640px) {
+  .cert-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cert-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   FILTER BAR SPACING
+   ============================================================ */
+
+.pv2-filters {
+  margin: 48px 0 64px;
+}
+
+@media (min-width: 768px) {
+  .pv2-filters {
+    margin: 56px 0 72px;
+  }
+}
+
+/* ============================================================
+   FOOTER CTA SPACING
+   ============================================================ */
+
+.pv2-footer-cta {
+  margin-top: 64px;
+}
+
+@media (min-width: 768px) {
+  .pv2-footer-cta {
+    margin-top: 80px;
+  }
+}
+
+/* ============================================================
+   AVAILABILITY BAR SPACING
+   ============================================================ */
+
+.about-availability {
+  margin-top: 64px;
+}
+
+@media (min-width: 768px) {
+  .about-availability {
+    margin-top: 80px;
+  }
+}
+
+/* ============================================================
+   SECTION DIVIDER SPACING
+   ============================================================ */
+
+.exp-divider {
+  margin: 80px 0;
+}
+
+@media (min-width: 768px) {
+  .exp-divider {
+    margin: 96px 0;
+  }
+}
+
+/* ============================================================
+   LOGO SHOWCASE SPACING
+   ============================================================ */
+
+.logo-showcase {
+  padding: 64px 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .logo-showcase {
+    padding: 80px 0;
+  }
+}
+
+/* ============================================================
+   TITLE HEADER SPACING
+   ============================================================ */
+
+.title-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-bottom: var(--heading-mb-mobile);
+}
+
+@media (min-width: 768px) {
+  .title-header {
+    margin-bottom: var(--heading-mb-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-header {
+    margin-bottom: var(--heading-mb-desktop);
+  }
+}

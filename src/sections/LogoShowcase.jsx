@@ -1,26 +1,25 @@
 import { logoIconsList } from "../constants";
 
-const LogoIcon = ({ icon }) => {
-  return (
-    <div className="flex-none flex-center marquee-item">
-      <img src={icon.imgPath} alt={icon.name} />
-    </div>
-  );
-};
-
 const LogoShowcase = () => (
-  <div className="md:my-20 my-10 relative">
-    <div className="gradient-edge" />
-    <div className="gradient-edge" />
+  <div className="logo-showcase">
+    <p className="logo-showcase-label">Technologies & Tools</p>
 
-    <div className="marquee h-52">
-      <div className="marquee-box md:gap-12 gap-5">
-        {logoIconsList.map((icon, index) => (
-          <LogoIcon key={index} icon={icon} />
-        ))}
+    <div className="logo-track-wrap">
+      <div className="logo-fade logo-fade--left" aria-hidden="true" />
+      <div className="logo-fade logo-fade--right" aria-hidden="true" />
 
-        {logoIconsList.map((icon, index) => (
-          <LogoIcon key={index} icon={icon} />
+      <div className="logo-track" aria-label="Technology logos" role="img">
+        {/* Two copies for seamless loop */}
+        {[...logoIconsList, ...logoIconsList].map((icon, i) => (
+          <div key={i} className="logo-item">
+            <img
+              src={icon.imgPath}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              className="logo-img"
+            />
+          </div>
         ))}
       </div>
     </div>

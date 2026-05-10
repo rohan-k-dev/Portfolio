@@ -1,14 +1,28 @@
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const TitleHeader = ({ title, sub }) => {
+  const ref = useRef(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      ref.current,
+      { y: 24, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.7, ease: "power3.out",
+        scrollTrigger: { trigger: ref.current, start: "top 88%" },
+      }
+    );
+  }, []);
+
   return (
-    <div className="flex flex-col items-center gap-5">
-      <div className="hero-badge">
-        <p>{sub}</p>
-      </div>
-      <div>
-        <h1 className="font-semibold md:text-5xl text-3xl text-center">
-          {title}
-        </h1>
-      </div>
+    <div ref={ref} className="title-header">
+      <span className="title-header-sub">{sub}</span>
+      <h2 className="title-header-text">{title}</h2>
     </div>
   );
 };

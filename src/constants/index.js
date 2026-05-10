@@ -1,265 +1,285 @@
 const navLinks = [
-  {
-    name: "Work",
-    link: "#work",
-  },
-  {
-    name: "Experience",
-    link: "#experience",
-  },
-  {
-    name: "Skills",
-    link: "#skills",
-  },
-  {
-    name: "Testimonials",
-    link: "#testimonials",
-  },
+  { name: "Projects", link: "#work" },
+  { name: "About", link: "#about" },
+  { name: "Experience", link: "#experience" },
+  { name: "Skills", link: "#skills" },
+  { name: "Contact", link: "#contact" },
 ];
 
 const words = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
+  { text: "Full-Stack", imgPath: "/images/ideas.svg" },
+  { text: "ML-Powered", imgPath: "/images/concepts.svg" },
+  { text: "Cloud-Native", imgPath: "/images/designs.svg" },
+  { text: "Scalable", imgPath: "/images/code.svg" },
+  { text: "Full-Stack", imgPath: "/images/ideas.svg" },
+  { text: "ML-Powered", imgPath: "/images/concepts.svg" },
+  { text: "Cloud-Native", imgPath: "/images/designs.svg" },
+  { text: "Scalable", imgPath: "/images/code.svg" },
 ];
 
 const counterItems = [
-  { value: 15, suffix: "+", label: "Years of Experience" },
-  { value: 200, suffix: "+", label: "Satisfied Clients" },
-  { value: 108, suffix: "+", label: "Completed Projects" },
-  { value: 90, suffix: "%", label: "Client Retention Rate" },
+  { value: 4, suffix: "+", label: "Projects Shipped" },
+  { value: 9, suffix: "+", label: "Technologies Mastered" },
+  { value: 2, suffix: "", label: "Hackathon Wins" },
+  { value: 2027, suffix: "", label: "Graduating Year" },
 ];
 
 const logoIconsList = [
-  {
-    imgPath: "/images/logos/company-logo-1.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-2.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-3.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-4.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-5.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-6.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-7.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-8.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-9.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-10.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-11.png",
-  },
+  { imgPath: "/images/logos/company-logo-1.png" },
+  { imgPath: "/images/logos/company-logo-2.png" },
+  { imgPath: "/images/logos/company-logo-3.png" },
+  { imgPath: "/images/logos/company-logo-4.png" },
+  { imgPath: "/images/logos/company-logo-5.png" },
+  { imgPath: "/images/logos/company-logo-6.png" },
+  { imgPath: "/images/logos/company-logo-7.png" },
+  { imgPath: "/images/logos/company-logo-8.png" },
+  { imgPath: "/images/logos/company-logo-9.png" },
+  { imgPath: "/images/logos/company-logo-10.png" },
+  { imgPath: "/images/logos/company-logo-11.png" },
 ];
 
 const abilities = [
   {
     imgPath: "/images/seo.png",
-    title: "Quality Focus",
-    desc: "Delivering high-quality results while maintaining attention to every detail.",
+    title: "End-to-End Engineering",
+    desc: "From database schema to deployed UI — I own the full stack and ship production-ready systems.",
   },
   {
     imgPath: "/images/chat.png",
-    title: "Reliable Communication",
-    desc: "Keeping you updated at every step to ensure transparency and clarity.",
+    title: "AI & ML Integration",
+    desc: "I build intelligent features using Python and ML pipelines that solve real-world problems.",
   },
   {
     imgPath: "/images/time.png",
-    title: "On-Time Delivery",
-    desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
+    title: "Cloud-First Mindset",
+    desc: "Architecting scalable, cost-efficient solutions on Google Cloud with modern DevOps practices.",
   },
 ];
 
 const techStackImgs = [
-  {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
-  },
-  {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
-  },
-  {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
-  },
-  {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
-  },
-  {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
-  },
+  { name: "React.js", imgPath: "/images/logos/react.png" },
+  { name: "Python", imgPath: "/images/logos/python.svg" },
+  { name: "Node.js", imgPath: "/images/logos/node.png" },
+  { name: "Three.js", imgPath: "/images/logos/three.png" },
+  { name: "Git & GitHub", imgPath: "/images/logos/git.svg" },
 ];
 
 const techStackIcons = [
   {
-    name: "React Developer",
+    name: "React.js",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
+    name: "Python",
     modelPath: "/models/python-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
-    name: "Backend Developer",
+    name: "Node.js",
     modelPath: "/models/node-transformed.glb",
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
-    name: "Interactive Developer",
+    name: "Three.js",
     modelPath: "/models/three.js-transformed.glb",
     scale: 0.05,
     rotation: [0, 0, 0],
   },
   {
-    name: "Project Manager",
+    name: "Git & GitHub",
     modelPath: "/models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
   },
 ];
 
-const expCards = [
+const expCards = [];
+const expLogos = [];
+
+const achievements = [
   {
-    review: "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
-    responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
-    ],
+    id: "aiverse",
+    rank: "1st Place",
+    title: "AI VERSE 2.0 Hackathon",
+    organizer: "AI VERSE · Intercollegiate",
+    date: "2024",
+    prize: "₹20,000",
+    accent: "#f59e0b",
+    icon: "🏆",
+    description:
+      "Built ProctoAI — an AI-powered exam proctoring system with real-time face detection, gaze tracking, and behavioral anomaly detection. Delivered a fully working prototype in under 24 hours.",
+    tags: ["React", "Python", "OpenCV", "Google Cloud"],
   },
   {
-    review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
-    responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
-    ],
-  },
-  {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
-    responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
-    ],
+    id: "codesphere",
+    rank: "Rank 12",
+    title: "CodeSphere Codethon",
+    organizer: "GeeksforGeeks · National",
+    date: "2024",
+    prize: "National Ranking",
+    accent: "#52aeff",
+    icon: "🥇",
+    description:
+      "Secured 12th position nationally in a competitive programming contest testing algorithmic depth across data structures, graphs, and dynamic programming. Competed against thousands from top engineering colleges.",
+    tags: ["DSA", "Algorithms", "Competitive Programming"],
   },
 ];
 
-const expLogos = [
+const certifications = [
   {
-    name: "logo1",
-    imgPath: "/images/logo1.png",
+    id: "gcp",
+    title: "Google Cloud Fundamentals",
+    issuer: "Google Cloud",
+    issued: "2024",
+    accent: "#4285f4",
+    credentialUrl: "#",
   },
   {
-    name: "logo2",
-    imgPath: "/images/logo2.png",
+    id: "deeplearning",
+    title: "Deep Learning Specialization",
+    issuer: "DeepLearning.AI",
+    issued: "2024",
+    accent: "#a78bfa",
+    credentialUrl: "#",
   },
   {
-    name: "logo3",
-    imgPath: "/images/logo3.png",
+    id: "amazon",
+    title: "Full Stack Development",
+    issuer: "Amazon",
+    issued: "2024",
+    accent: "#fb923c",
+    credentialUrl: "#",
   },
 ];
 
-const testimonials = [
+const testimonials = [];
+
+const projects = [
   {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
+    id: "cloudburst",
+    priority: "hero",
+    category: "AI / ML",
+    status: "Live",
+    title: "Cloudburst ML",
+    tagline: "AI-Powered Cloudburst Prediction System",
+    description:
+      "Predicts extreme rainfall events using XGBoost trained on NOAA GFS atmospheric data. Integrates an NLP verification layer to cross-check predictions against live weather reports, served through an interactive Streamlit dashboard.",
+    tags: ["Python", "XGBoost", "Streamlit", "NLP", "Scikit-learn", "Pandas", "NOAA GFS"],
+    accent: "#06b6d4",
+    badge: "AI / ML",
+    imgPath: "/images/project1.png",
+    github: "https://github.com/rohan-k-dev/cloudburst-prediction-model",
+    demo: null,
+    metrics: [
+      { label: "Model", value: "XGBoost" },
+      { label: "Data Source", value: "NOAA GFS" },
+      { label: "NLP Layer", value: "Active" },
+      { label: "Dashboard", value: "Streamlit" },
+    ],
   },
   {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
-    review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
+    id: "proctoai",
+    priority: "hero",
+    category: "AI / ML",
+    status: "Live",
+    title: "ProctoAI",
+    tagline: "Real-Time AI Exam Proctoring Platform",
+    description:
+      "Won 1st place at AI VERSE 2.0 Hackathon (₹20K). Detects suspicious activity in real time using computer vision — face detection, gaze tracking, and behavioural anomaly scoring — with a live analytics dashboard for invigilators.",
+    tags: ["React", "Node.js", "MongoDB", "AI/ML", "OpenCV", "FastAPI"],
+    accent: "#52aeff",
+    badge: "🏆 Hackathon Winner · ₹20K",
+    imgPath: "/images/project2.png",
+    github: "https://github.com/rohan-k-dev/ProctoAi",
+    demo: null,
+    metrics: [
+      { label: "Detection", value: "Real-time" },
+      { label: "Accuracy", value: "94%+" },
+      { label: "Stack", value: "MERN + AI" },
+      { label: "Award", value: "₹20,000" },
+    ],
   },
   {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
-    review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    imgPath: "/images/client2.png",
+    id: "recruitiq",
+    priority: "grid",
+    category: "Analytics",
+    status: "Live",
+    title: "RecruitIQ",
+    tagline: "Smart HR Analytics & Hiring Intelligence",
+    description:
+      "Automates resume screening with NLP, scores candidates by job-fit, and surfaces predictive hiring insights through a clean analytics dashboard. Cuts manual screening time by 70%+.",
+    tags: ["React", "Python", "Node.js", "ML", "Analytics"],
+    accent: "#a78bfa",
+    badge: "Analytics",
+    imgPath: "/images/project3.png",
+    github: "https://github.com/rohan-k-dev/RecruitIQ",
+    demo: null,
+    metrics: [
+      { label: "Screening", value: "Automated" },
+      { label: "NLP Pipeline", value: "Active" },
+    ],
   },
   {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
-    review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
+    id: "unistation",
+    priority: "grid",
+    category: "Full Stack",
+    status: "Live",
+    title: "UniStation",
+    tagline: "Campus Marketplace Platform",
+    description:
+      "Full-stack marketplace where students buy and sell products on campus. Features real-time listings, user authentication, and a clean product management interface built on the MERN stack.",
+    tags: ["React", "Node.js", "MongoDB", "Express.js"],
+    accent: "#fb923c",
+    badge: "Full Stack",
+    imgPath: "/images/project1.png",
+    github: "https://github.com/rohan-k-dev/unistation-campus-marketplace",
+    demo: null,
+    metrics: [
+      { label: "Stack", value: "MERN" },
+      { label: "Auth", value: "JWT" },
+    ],
   },
   {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
-    review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
-  },
-  {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
+    id: "quizapp",
+    priority: "grid",
+    category: "Full Stack",
+    status: "Live",
+    title: "Quiz App",
+    tagline: "MERN Stack Quiz Platform",
+    description:
+      "Full-featured quiz platform with separate admin and student portals. Admins create and manage quizzes; students take timed assessments with instant scoring and result history.",
+    tags: ["React", "Node.js", "MongoDB", "Express.js"],
+    accent: "#34d399",
+    badge: "Full Stack",
+    imgPath: "/images/project2.png",
+    github: "https://github.com/rohan-k-dev/quiz_app",
+    demo: null,
+    metrics: [
+      { label: "Portals", value: "Admin + Student" },
+      { label: "Stack", value: "MERN" },
+    ],
   },
 ];
 
 const socialImgs = [
   {
-    name: "insta",
-    imgPath: "/images/insta.png",
-  },
-  {
-    name: "fb",
-    imgPath: "/images/fb.png",
-  },
-  {
-    name: "x",
-    imgPath: "/images/x.png",
+    name: "github",
+    imgPath: "/images/logos/git.svg",
+    url: "https://github.com/rohan-k-dev",
   },
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    url: "https://linkedin.com/in/rohan19725",
+  },
+  {
+    name: "x",
+    imgPath: "/images/x.png",
+    url: "#",
   },
 ];
 
@@ -270,7 +290,10 @@ export {
   counterItems,
   expCards,
   expLogos,
+  achievements,
+  certifications,
   testimonials,
+  projects,
   socialImgs,
   techStackIcons,
   techStackImgs,

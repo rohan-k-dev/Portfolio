@@ -1,0 +1,99 @@
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE UTILITIES
+   
+   Consistent spacing, typography, and layout system
+═══════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* ─────────────────────────────────────────────────────────
+     SECTION SPACING
+  ───────────────────────────────────────────────────────────── */
+  
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-28;
+  }
+  
+  .section-spacing-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .section-spacing-lg {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     CONTAINER SYSTEM
+  ───────────────────────────────────────────────────────────── */
+  
+  .container-responsive {
+    @apply w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16;
+  }
+  
+  .container-narrow {
+    @apply w-full max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16;
+  }
+  
+  .container-wide {
+    @apply w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     GAP SYSTEM
+  ───────────────────────────────────────────────────────────── */
+  
+  .gap-responsive {
+    @apply gap-6 md:gap-8 lg:gap-12;
+  }
+  
+  .gap-responsive-sm {
+    @apply gap-4 md:gap-6 lg:gap-8;
+  }
+  
+  .gap-responsive-lg {
+    @apply gap-8 md:gap-12 lg:gap-16;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     TYPOGRAPHY
+  ───────────────────────────────────────────────────────────── */
+  
+  .heading-hero {
+    @apply text-4xl md:text-6xl lg:text-8xl font-black leading-tight tracking-tight;
+  }
+  
+  .heading-section {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+  }
+  
+  .heading-card {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold leading-tight;
+  }
+  
+  .body-lg {
+    @apply text-base md:text-lg lg:text-xl leading-relaxed;
+  }
+  
+  .body-base {
+    @apply text-sm md:text-base lg:text-lg leading-relaxed;
+  }
+  
+  .body-sm {
+    @apply text-xs md:text-sm lg:text-base leading-relaxed;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     GRID SYSTEM
+  ───────────────────────────────────────────────────────────── */
+  
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2;
+  }
+  
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+  }
+}

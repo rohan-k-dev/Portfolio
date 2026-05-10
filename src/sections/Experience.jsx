@@ -1,150 +1,176 @@
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import { expCards } from "../constants";
+import { achievements, certifications } from "../constants";
 import TitleHeader from "../components/TitleHeader";
-import GlowCard from "../components/GlowCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* ── Inline SVG icons ── */
+const ExternalIcon = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+    <polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
+
+const ShieldIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  </svg>
+);
+
+/* ── Achievement card ── */
+const AchievementCard = ({ item, index }) => (
+  <div
+    className="ach-card"
+    style={{ "--accent": item.accent }}
+  >
+    {/* Top bar */}
+    <div className="ach-top-bar" style={{ background: item.accent }} />
+
+    <div className="ach-body">
+      {/* Header row */}
+      <div className="ach-header">
+        <div className="ach-icon-wrap">{item.icon}</div>
+        <div className="ach-rank-badge" style={{ "--accent": item.accent }}>
+          {item.rank}
+        </div>
+      </div>
+
+      {/* Title block */}
+      <div className="ach-title-block">
+        <h3 className="ach-title">{item.title}</h3>
+        <p className="ach-organizer">{item.organizer}</p>
+      </div>
+
+      {/* Description */}
+      <p className="ach-desc">{item.description}</p>
+
+      {/* Tags */}
+      <div className="ach-tags">
+        {item.tags.map((tag) => (
+          <span key={tag} className="ach-tag">{tag}</span>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="ach-footer">
+        <span className="ach-date">{item.date}</span>
+        <span className="ach-prize" style={{ color: item.accent }}>
+          {item.prize}
+        </span>
+      </div>
+    </div>
+  </div>
+);
+
+/* ── Certification card ── */
+const CertCard = ({ cert }) => (
+  <div className="cert-card" style={{ "--accent": cert.accent }}>
+    <div className="cert-icon-wrap" style={{ "--accent": cert.accent }}>
+      <ShieldIcon />
+    </div>
+
+    <div className="cert-body">
+      <p className="cert-issuer">{cert.issuer}</p>
+      <h4 className="cert-title">{cert.title}</h4>
+      <p className="cert-issued">Issued {cert.issued}</p>
+    </div>
+
+    <a
+      href={cert.credentialUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="cert-link"
+      style={{ "--accent": cert.accent }}
+    >
+      View <ExternalIcon />
+    </a>
+  </div>
+);
+
+/* ── Section ── */
 const Experience = () => {
+  const sectionRef = useRef(null);
+
   useGSAP(() => {
-    // Loop through each timeline card and animate them in
-    // as the user scrolls to each card
-    gsap.utils.toArray(".timeline-card").forEach((card) => {
-      // Animate the card coming in from the left
-      // and fade in
-      gsap.from(card, {
-        // Move the card in from the left
-        xPercent: -100,
-        // Make the card invisible at the start
-        opacity: 0,
-        // Set the origin of the animation to the left side of the card
-        transformOrigin: "left left",
-        // Animate over 1 second
-        duration: 1,
-        // Use a power2 ease-in-out curve
-        ease: "power2.inOut",
-        // Trigger the animation when the card is 80% of the way down the screen
-        scrollTrigger: {
-          // The card is the trigger element
-          trigger: card,
-          // Trigger the animation when the card is 80% down the screen
-          start: "top 80%",
-        },
-      });
-    });
+    // Achievement cards — stagger in from bottom
+    gsap.fromTo(
+      ".ach-card",
+      { y: 48, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.85, stagger: 0.18, ease: "power3.out",
+        scrollTrigger: { trigger: ".ach-grid", start: "top 82%" },
+      }
+    );
 
-    // Animate the timeline height as the user scrolls
-    // from the top of the timeline to 70% down the screen
-    // The timeline height should scale down from 1 to 0
-    // as the user scrolls up the screen
-    gsap.to(".timeline", {
-      // Set the origin of the animation to the bottom of the timeline
-      transformOrigin: "bottom bottom",
-      // Animate the timeline height over 1 second
-      ease: "power1.inOut",
-      // Trigger the animation when the timeline is at the top of the screen
-      // and end it when the timeline is at 70% down the screen
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top center",
-        end: "70% center",
-        // Update the animation as the user scrolls
-        onUpdate: (self) => {
-          // Scale the timeline height as the user scrolls
-          // from 1 to 0 as the user scrolls up the screen
-          gsap.to(".timeline", {
-            scaleY: 1 - self.progress,
-          });
-        },
-      },
-    });
+    // Cert cards — stagger in from bottom
+    gsap.fromTo(
+      ".cert-card",
+      { y: 32, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.7, stagger: 0.12, ease: "power3.out",
+        scrollTrigger: { trigger: ".cert-row", start: "top 85%" },
+      }
+    );
 
-    // Loop through each expText element and animate them in
-    // as the user scrolls to each text element
-    gsap.utils.toArray(".expText").forEach((text) => {
-      // Animate the text opacity from 0 to 1
-      // and move it from the left to its final position
-      // over 1 second with a power2 ease-in-out curve
-      gsap.from(text, {
-        // Set the opacity of the text to 0
-        opacity: 0,
-        // Move the text from the left to its final position
-        // (xPercent: 0 means the text is at its final position)
-        xPercent: 0,
-        // Animate over 1 second
-        duration: 1,
-        // Use a power2 ease-in-out curve
-        ease: "power2.inOut",
-        // Trigger the animation when the text is 60% down the screen
-        scrollTrigger: {
-          // The text is the trigger element
-          trigger: text,
-          // Trigger the animation when the text is 60% down the screen
-          start: "top 60%",
-        },
-      });
-    }, "<"); // position parameter - insert at the start of the animation
+    // Section divider line draw
+    gsap.fromTo(
+      ".exp-divider-line",
+      { scaleX: 0 },
+      {
+        scaleX: 1, duration: 1, ease: "power2.inOut",
+        scrollTrigger: { trigger: ".exp-divider-line", start: "top 88%" },
+      }
+    );
   }, []);
 
   return (
-    <section
-      id="experience"
-      className="flex-center md:mt-40 mt-20 section-padding xl:px-0"
-    >
-      <div className="w-full h-full md:px-20 px-5">
+    <section id="experience" ref={sectionRef} className="exp-section">
+      <div className="exp-inner">
+
         <TitleHeader
-          title="Professional Work Experience"
-          sub="💼 My Career Overview"
+          title="Achievements & Certifications"
+          sub="🏅 Recognition & Learning"
         />
-        <div className="mt-32 relative">
-          <div className="relative z-50 xl:space-y-32 space-y-10">
-            {expCards.map((card) => (
-              <div key={card.title} className="exp-card-wrapper">
-                <div className="xl:w-2/6">
-                  <GlowCard card={card}>
-                    <div>
-                      <img src={card.imgPath} alt="exp-img" />
-                    </div>
-                  </GlowCard>
-                </div>
-                <div className="xl:w-4/6">
-                  <div className="flex items-start">
-                    <div className="timeline-wrapper">
-                      <div className="timeline" />
-                      <div className="gradient-line w-1 h-full" />
-                    </div>
-                    <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                      <div className="timeline-logo">
-                        <img src={card.logoPath} alt="logo" />
-                      </div>
-                      <div>
-                        <h1 className="font-semibold text-3xl">{card.title}</h1>
-                        <p className="my-5 text-white-50">
-                          🗓️&nbsp;{card.date}
-                        </p>
-                        <p className="text-[#839CB5] italic">
-                          Responsibilities
-                        </p>
-                        <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
-                          {card.responsibilities.map(
-                            (responsibility, index) => (
-                              <li key={index} className="text-lg">
-                                {responsibility}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+        {/* ── Achievements ── */}
+        <div className="exp-block">
+          <p className="exp-block-label">
+            <span className="exp-block-label-line" />
+            Hackathons & Competitions
+          </p>
+
+          <div className="ach-grid">
+            {achievements.map((item, i) => (
+              <AchievementCard key={item.id} item={item} index={i} />
             ))}
           </div>
         </div>
+
+        {/* ── Divider ── */}
+        <div className="exp-divider">
+          <div className="exp-divider-line" />
+        </div>
+
+        {/* ── Certifications ── */}
+        <div className="exp-block">
+          <p className="exp-block-label">
+            <span className="exp-block-label-line" />
+            Certifications
+          </p>
+
+          <div className="cert-row">
+            {certifications.map((cert) => (
+              <CertCard key={cert.id} cert={cert} />
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
